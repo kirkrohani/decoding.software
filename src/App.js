@@ -4,11 +4,11 @@ import './App.css';
 
 function Blog() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+    <div className="Blog">
+      <header className="Blog-header">
+        <img src={logo} className="Blog-logo" alt="logo" />
         <a
-          className="App-link"
+          className="Blog-link"
           href="https://decoding.software"
           target="_blank"
           rel="noopener noreferrer"
@@ -20,4 +20,4 @@ function Blog() {
   );
 }
 
-export default App;
+export default Blog;
