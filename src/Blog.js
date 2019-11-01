@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './css/App.css';
 import { posts } from './data/seed.js';
 import BlogPost from './BlogPost';
@@ -12,20 +12,34 @@ class Blog extends React.Component {
     this.state  = { blogPosts: posts};
   }
 
+  handlePostUpVote = postId => {
+    // console.log('handlePostUpVote post id: ', postId, 'current votes: ', this.state.posts[postId].votes);
+
+    let newPost = null;
+    let updatedPostsList = this.state.posts.map( (post) => {              //find selected blog post id
+      if (post.id === postId) {
+        newPost = Object.create(post);
+        newPost.votes += 1;
+        return newPost;
+      } else {
+        return post;
+      } 
+    });
+    this.setState({ posts: updatedPostsList});
+  }
 
   render() {
-    console.log('rendering....: ', this.state.blogPosts[1] );
+    const postComponents =  this.state.blogPosts.sort( (a,b) => (a.votes-b.votes)).map( (post) =>       //sort in order of ascending # of votes
+      <BlogPost key={post.id} post={post} onVote={this.handlePostUpVote} />  
+    );
 
     return (
-      <div className="Blog">
-        <header className="Blog-header">
-          <img src={logo} className="Blog-logo" alt="logo" />
-        </header>
-        <BlogPost key={1} post={this.state.blogPosts[1]} />  
-
+      <div className='ui unstackable items'>
+        {postComponents}    
       </div>
     );
-  }
+  } //end render
+
 }
 
 export default Blog;

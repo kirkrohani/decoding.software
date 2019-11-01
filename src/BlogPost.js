@@ -3,14 +3,12 @@ import './css/App.css';
 
 class BlogPost extends React.Component {
 
-  // handleUpVote = () =>  {
-  //   this.props.onVote(this.props.post.id);
-  // }
+  handleUpVote = () =>  {
+    this.props.onVote(this.props.post.id);
+  }
 
   render () {
-
     const {imageUrl, url, title, description, submitterAvatarUrl, votes} = this.props.post;
-    console.log('imageURL: ', imageUrl);
     return (
       <div className="item">
 
@@ -28,7 +26,7 @@ class BlogPost extends React.Component {
           <div className="extra">
             <span>Submitted by: </span>
             <img alt= "posters avatar" src={submitterAvatarUrl} className="ui avatar image" />
-            <a href="http://wwww.google.com">
+            <a onClick={this.handleUpVote}>
               <i className="large caret up icon" />
             </a>
             {votes}
