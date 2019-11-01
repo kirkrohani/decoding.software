@@ -7,16 +7,19 @@ import BlogPost from './BlogPost';
 class Blog extends React.Component {
 
   constructor(props) {
-    console.log('constructor call');
     super(props);
-    this.state  = { blogPosts: posts};
+    this.state  = { blogPosts: []};
+  }
+
+  componentDidMount() {
+    this.setState( { blogPosts: posts} );
   }
 
   handlePostUpVote = postId => {
     // console.log('handlePostUpVote post id: ', postId, 'current votes: ', this.state.posts[postId].votes);
 
     let newPost = null;
-    let updatedPostsList = this.state.posts.map( (post) => {              //find selected blog post id
+    let updatedPostsList = this.state.blogPosts.map( (post) => {              //find selected blog post id
       if (post.id === postId) {
         newPost = Object.create(post);
         newPost.votes += 1;
@@ -25,7 +28,7 @@ class Blog extends React.Component {
         return post;
       } 
     });
-    this.setState({ posts: updatedPostsList});
+    this.setState({ blogPosts: updatedPostsList});
   }
 
   render() {
