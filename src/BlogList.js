@@ -1,10 +1,9 @@
 import React from 'react';
-// import logo from './logo.svg';
 import './css/App.css';
 import { posts } from './data/seed.js';
 import BlogPost from './BlogPost';
 
-class Blog extends React.Component {
+class BlogList extends React.Component {
 
   constructor(props) {
     super(props);
@@ -42,7 +41,6 @@ class Blog extends React.Component {
       </div>
     );
   } //end render
-
 }
 
-export default Blog;
+export default BlogList;
