@@ -1,15 +1,15 @@
 import React from 'react';
 import './css/App.css';
 import BlogList from './BlogList';
-import CreateBlogButton from './CreateBlogButton';
+import CreateBlog from './CreateBlog';
 
 class BlogDashboard extends React.Component {
 
  render() {
    return (
     <div>
+      { this.props.isAdmin && <CreateBlog /> }
       <BlogList />
-      <CreateBlogButton isVisible={true} />
     </div>
    );
  }

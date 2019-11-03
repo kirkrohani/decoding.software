@@ -32,14 +32,8 @@ class BlogList extends React.Component {
   }
 
   render() {
-    const postComponents =  this.state.blogPosts.sort( (a,b) => (a.votes-b.votes)).map( (post) => {
-      return ( 
-
-      <div>
-        <BlogPost key={post.id} post={post} onVote={this.handlePostUpVote} isEditable={false}/>    
-        </div>
-    )
-    }  
+    const postComponents =  this.state.blogPosts.sort( (a,b) => (a.votes-b.votes)).map( (post) => 
+      <BlogPost key={post.id} post={post} onVote={this.handlePostUpVote} isEditable={false}/>      
     );
 
     return (

@@ -20,7 +20,6 @@ class ViewBlogPost extends React.Component {
       
         <div className="middle aligned content">
           <div className="header">
-          <EditBlogButton key={`editButton-$id`} post={id} />
             <a href={url}>{title}</a>
           </div>
           <div className="description">
@@ -33,6 +32,9 @@ class ViewBlogPost extends React.Component {
               <i className="large caret up icon" />
             </a>
             {votes}
+          </div>
+          <div>
+           <EditBlogButton key={`editButton-$id`} post={id} />
           </div>
           <hr />
           <br />

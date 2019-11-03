@@ -1,28 +1,11 @@
 import React from 'react';
 import './css/App.css';
+import CreateBlog from './CreateBlog';
 
 class EditBlogPost extends React.Component {
 
   render () {
-    const {title, description,} = this.props.post;
-    const submitText = this.props.title ? 'Update' : 'Create';
-    return (
-      <div className='ui centered card'>
-         <div className='content'>
-          <div className='ui form'> <div className='field'>
-                    <label>Title</label>
-                      <input type='text' defaultValue={title} /> </div>
-                    <div className='field'>
-                      <label>Description</label>
-                        <input type='text' defaultValue={description} />
-                    </div>
-                   <div className='ui two bottom attached buttons'>
-                    <button className='ui basic blue button'> {submitText} </button>
-                    <button className='ui basic red button'>Cancel </button>
-                  </div>
-            </div>
-          </div>
-       </div> );
+    return <CreateBlog key={`editPost-$this.props.id`} post={this.props.post} />      //same as CreateBlog except with a blog post passed down to pre-populate fields
   }
 }
 
