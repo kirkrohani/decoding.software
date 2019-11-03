@@ -5,6 +5,7 @@ class EditBlogPost extends React.Component {
 
   render () {
     const {title, description,} = this.props.post;
+    const submitText = this.props.title ? 'Update' : 'Create';
     return (
       <div className='ui centered card'>
          <div className='content'>
@@ -16,7 +17,7 @@ class EditBlogPost extends React.Component {
                         <input type='text' defaultValue={description} />
                     </div>
                    <div className='ui two bottom attached buttons'>
-                    <button className='ui basic blue button'> Submit </button>
+                    <button className='ui basic blue button'> {submitText} </button>
                     <button className='ui basic red button'>Cancel </button>
                   </div>
             </div>

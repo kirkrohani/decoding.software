@@ -8,7 +8,7 @@ class BlogPost extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = { isEditable: false};
+    this.state = { isEditable: this.props.isEditable};
   }
 
   render () {

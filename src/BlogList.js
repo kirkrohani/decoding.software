@@ -3,6 +3,7 @@ import './css/App.css';
 import { posts } from './data/seed.js';
 import BlogPost from './BlogPost';
 
+
 class BlogList extends React.Component {
 
   constructor(props) {
@@ -31,12 +32,18 @@ class BlogList extends React.Component {
   }
 
   render() {
-    const postComponents =  this.state.blogPosts.sort( (a,b) => (a.votes-b.votes)).map( (post) =>       //sort in order of ascending # of votes
-      <BlogPost key={post.id} post={post} onVote={this.handlePostUpVote} />  
+    const postComponents =  this.state.blogPosts.sort( (a,b) => (a.votes-b.votes)).map( (post) => {
+      return ( 
+
+      <div>
+        <BlogPost key={post.id} post={post} onVote={this.handlePostUpVote} isEditable={false}/>    
+        </div>
+    )
+    }  
     );
 
     return (
-      <div className='ui unstackable items'>
+      <div>
         {postComponents}    
       </div>
     );

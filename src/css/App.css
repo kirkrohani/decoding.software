@@ -36,3 +36,8 @@ body {
 i.icon {
   margin: 0;
 }
+
+.test1 {
+  background-color: #BCC6CC;
+  display: inline-block;
+}

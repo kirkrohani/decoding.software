@@ -1,5 +1,7 @@
 import React from 'react';
 import './css/App.css';
+import EditBlogButton from './EditBlogButton';
+
 
 class ViewBlogPost extends React.Component {
 
@@ -9,16 +11,16 @@ class ViewBlogPost extends React.Component {
   }
 
   render () {
-    const {imageUrl, url, title, description, submitterAvatarUrl, votes} = this.props.post;
+    const {imageUrl, url, title, description, submitterAvatarUrl, votes, id} = this.props.post;
     return (
       <div className="item">
-        VIEWING
         <div className="image">
           <img alt="Main blog post" src={imageUrl} />
         </div>
- 
+      
         <div className="middle aligned content">
           <div className="header">
+          <EditBlogButton key={`editButton-$id`} post={id} />
             <a href={url}>{title}</a>
           </div>
           <div className="description">
@@ -32,7 +34,8 @@ class ViewBlogPost extends React.Component {
             </a>
             {votes}
           </div>
-
+          <hr />
+          <br />
         </div>
       </div>
     );
