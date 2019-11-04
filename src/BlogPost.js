@@ -1,23 +1,44 @@
 import React from 'react';
-import ViewBlogPost from './ViewBlogPost';
-import EditBlogPost from './EditBlogPost';
-
 import './css/App.css';
+import EditBlogButton from './EditBlogButton';
+
 
 class BlogPost extends React.Component {
-
-  constructor(props) {
-    super(props);
-    this.state = { isEditable: this.props.isEditable};
+  handleUpVote = () =>  {
+    this.props.onVoteClick(this.props.post.id);
   }
 
   render () {
-      if (!this.state.isEditable) {
-        return( <ViewBlogPost key={this.props.post.id} post={this.props.post} /> );
-      } else {
-        return( <EditBlogPost key={this.props.post.id} post={this.props.post} />  );
-      }
-    
+    const {imageUrl, url, title, description, submitterAvatarUrl, votes, id} = this.props.post;
+    return (
+      <div className="item">
+        <div className="image">
+          <img alt="Main blog post" src={imageUrl} />
+        </div>
+      
+        <div className="middle aligned content">
+          <div className="header">
+            <a href={url}>{title}</a>
+          </div>
+          <div className="description">
+            <p>{description}</p>
+          </div>
+          <div className="extra">
+            <span>Submitted by: </span>
+            <img alt= "posters avatar" src={submitterAvatarUrl} className="ui avatar image" />
+            <a onClick={this.handleUpVote}>
+              <i className="large caret up icon" />
+            </a>
+            {votes}
+          </div>
+          <div>
+           <EditBlogButton key={`editButton-$id`} post={id} />
+          </div>
+          <hr />
+          <br />
+        </div>
+      </div>
+    );
 
   }
 }
