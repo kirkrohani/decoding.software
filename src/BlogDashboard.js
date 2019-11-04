@@ -2,7 +2,7 @@ import React from 'react';
 import './css/App.css';
 import { posts } from './data/seed.js';
 import BlogList from './BlogList';
-import CreateBlogForm from './CreateBlogForm';
+import CreateBlog from './CreateBlog';
 
 class BlogDashboard extends React.Component {
 
@@ -14,6 +14,10 @@ class BlogDashboard extends React.Component {
   componentDidMount() {
     this.setState( { blogPosts: posts} );
   }
+
+  handleCreateFormSubmit = (post) => {
+    this.createPost(post);
+  };
 
   handleUpVote = postId => {
     let newPost = null;
@@ -29,10 +33,19 @@ class BlogDashboard extends React.Component {
     this.setState({ blogPosts: updatedPostsList});
   }
 
+  createPost = (post) => {
+    // const newPost = helpers.newPost(post);
+    // this.setState({
+    //   blogPosts: this.state.blogPosts.concat(newPost),
+    // });
+
+    // client.createPost(newPost);
+  };
+
  render() {
    return (
     <div>
-      { this.props.isAdmin && <CreateBlogForm /> }
+      { this.props.isAdmin && <CreateBlog onFormSubmit={this.handleCreateFormSubmit} /> }
       <BlogList blogPosts={this.state.blogPosts} onVoteClick={this.handleUpVote} />
     </div>
    );

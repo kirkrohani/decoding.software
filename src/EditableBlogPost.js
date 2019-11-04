@@ -1,6 +1,6 @@
 import React from 'react';
 import BlogPost from './BlogPost';
-import EditBlogForm from './EditBlogForm';
+import BlogForm from './BlogForm';
 import './css/App.css';
 
 class EditableBlogPost extends React.Component {
@@ -11,9 +11,12 @@ class EditableBlogPost extends React.Component {
 
   render () {
       if (!this.state.isEditable) {
-        return( <BlogPost key={this.props.post.id} post={this.props.post} onVoteClick={this.props.onVoteClick}/> );
+        return( <BlogPost key={this.props.post.id} 
+                                     post={this.props.post} 
+                                     onVoteClick={this.props.onVoteClick}/> );
       } else {
-        return( <EditBlogForm key={this.props.post.id} post={this.props.post} />  );
+        return( <BlogForm key={this.props.post.id} 
+                                      post={this.props.post} />  );
       }
     
 

@@ -1,7 +1,8 @@
 import React from 'react';
 import './css/App.css';
+import BlogForm from './BlogForm';
 
-class CreateBlogForm extends React.Component {
+class CreateBlog extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -25,7 +26,7 @@ class CreateBlogForm extends React.Component {
   render() {
     if (this.state.isOpen) {
       return (
-        <TimerForm
+        <BlogForm
           onFormSubmit={this.handleFormSubmit}
           onFormClose={this.handleFormClose}
         />
@@ -45,4 +46,4 @@ class CreateBlogForm extends React.Component {
   }
 }
 
-export default CreateBlogForm;
+export default CreateBlog;
