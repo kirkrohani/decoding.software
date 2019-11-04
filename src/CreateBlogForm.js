@@ -1,7 +1,7 @@
 import React from 'react';
 import './css/App.css';
 
-class CreateBlog extends React.Component {
+class CreateBlogForm extends React.Component {
 
   render () {
     const {title, description,} = this.props.post;
@@ -26,4 +26,4 @@ class CreateBlog extends React.Component {
   }
 }
 
-export default CreateBlog;
+export default CreateBlogForm;

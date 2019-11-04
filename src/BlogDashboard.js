@@ -2,7 +2,7 @@ import React from 'react';
 import './css/App.css';
 import { posts } from './data/seed.js';
 import BlogList from './BlogList';
-import CreateBlog from './CreateBlog';
+import CreateBlogForm from './CreateBlogForm';
 
 class BlogDashboard extends React.Component {
 
@@ -32,7 +32,7 @@ class BlogDashboard extends React.Component {
  render() {
    return (
     <div>
-      { this.props.isAdmin && <CreateBlog /> }
+      { this.props.isAdmin && <CreateBlogForm /> }
       <BlogList blogPosts={this.state.blogPosts} onVoteClick={this.handleUpVote} />
     </div>
    );

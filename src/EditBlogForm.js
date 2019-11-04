@@ -1,7 +1,7 @@
 import React from 'react';
 import './css/App.css';
 
-class BlogForm extends React.Component {
+class EditBlogForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -70,4 +70,4 @@ class BlogForm extends React.Component {
   }
 }
 
-export default BlogForm;
+export default EditBlogForm;
