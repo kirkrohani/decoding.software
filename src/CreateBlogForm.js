@@ -2,27 +2,46 @@ import React from 'react';
 import './css/App.css';
 
 class CreateBlogForm extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isOpen: false,
+    };
+  }
 
-  render () {
-    const {title, description,} = this.props.post;
-    const submitText = this.props.title ? 'Update' : 'Create';
-    return (
-      <div className='ui centered card'>
-         <div className='content'>
-          <div className='ui form'> <div className='field'>
-                    <label>Title</label>
-                      <input type='text' defaultValue={title} /> </div>
-                    <div className='field'>
-                      <label>Description</label>
-                        <input type='text' defaultValue={description} />
-                    </div>
-                   <div className='ui two bottom attached buttons'>
-                    <button className='ui basic blue button'> {submitText} </button>
-                    <button className='ui basic red button'>Cancel </button>
-                  </div>
-            </div>
-          </div>
-       </div> );
+  handleFormOpen = () => {
+    this.setState({ isOpen: true });
+  };
+
+  handleFormClose = () => {
+    this.setState({ isOpen: false });
+  };
+
+  handleFormSubmit = (post) => {
+    this.props.onFormSubmit(post);
+    this.setState({ isOpen: false });
+  };
+
+  render() {
+    if (this.state.isOpen) {
+      return (
+        <TimerForm
+          onFormSubmit={this.handleFormSubmit}
+          onFormClose={this.handleFormClose}
+        />
+      );
+    } else {
+      return (
+        <div className='ui basic content center aligned segment'>
+          <button
+            className='ui basic button icon'
+            onClick={this.handleFormOpen}
+          >
+            <i className='plus icon' />
+          </button>
+        </div>
+      );
+    }
   }
 }
 
