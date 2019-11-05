@@ -43,6 +43,7 @@ class BlogDashboard extends React.Component {
   };
 
  render() {
+   
    return (
     <div>
       { this.props.isAdmin && <CreateBlog onFormSubmit={this.handleCreateFormSubmit} /> }

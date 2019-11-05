@@ -4,7 +4,8 @@ import './css/index.css';
 import BlogDashboard from './BlogDashboard';
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<BlogDashboard />, document.getElementById('root'));
+// TODO: Modify isAdmin when login functionality implemented
+ReactDOM.render(<BlogDashboard isAdmin={true}/>, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
