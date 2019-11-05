@@ -41,7 +41,7 @@ class BlogForm extends React.Component {
                 />
               </div>
               <div className='field'>
-                <label>Project</label>
+                <label>Description</label>
                 <input
                   type='text'
                   value={this.state.project}
