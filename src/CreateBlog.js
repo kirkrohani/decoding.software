@@ -1,6 +1,8 @@
 import React from 'react';
 import './css/App.css';
 import BlogForm from './BlogForm';
+import { Button } from 'semantic-ui-react'
+
 
 class CreateBlog extends React.Component {
   constructor(props) {
@@ -34,12 +36,7 @@ class CreateBlog extends React.Component {
     } else {
       return (
         <div className='ui basic content center aligned segment'>
-          <button
-            className='ui basic button icon'
-            onClick={this.handleFormOpen}
-          >
-            <i className='plus icon' />
-          </button>
+          <Button onClick={this.handleFormOpen}>Create Blog Post</Button>
         </div>
       );
     }
