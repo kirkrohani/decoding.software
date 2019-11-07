@@ -15,9 +15,7 @@ class BlogDashboard extends React.Component {
     this.setState( { blogPosts: posts} );
   }
 
-  handleCreateFormSubmit = (post) => {
-    this.createPost(post);
-  };
+  handleCreateFormSubmit = (post) => { this.createPost(post) };
 
   handleUpVote = postId => {
     let newPost = null;
