@@ -3,8 +3,9 @@ import './css/App.css';
 import { posts } from './data/seed.js';
 import BlogList from './BlogList';
 import CreateBlog from './CreateBlog';
+import HomepageLayout from './Theme/HomepageLayout';
 
-class BlogDashboard extends React.Component {
+class BlogHomepage extends React.Component {
 
   constructor(props) {
     super(props);
@@ -44,11 +45,12 @@ class BlogDashboard extends React.Component {
    
    return (
     <div>
-      { this.props.isAdmin && <CreateBlog onFormSubmit={this.handleCreateFormSubmit} /> }
-      <BlogList blogPosts={this.state.blogPosts} onVoteClick={this.handleUpVote} />
+      <HomepageLayout />
+      {/* @TODO: Move to proper file{ this.props.isAdmin && <CreateBlog onFormSubmit={this.handleCreateFormSubmit} /> }
+      <BlogList blogPosts={this.state.blogPosts} onVoteClick={this.handleUpVote} /> */}
     </div>
    );
  }
 }
 
-export default BlogDashboard;
+export default BlogHomepage;
