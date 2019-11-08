@@ -23,12 +23,18 @@ class DesktopContainer extends React.Component {
   hideFixedMenu = () => this.setState({ fixed: false })
   showFixedMenu = () => this.setState({ fixed: true })
 
+  getWidth = () => {
+    const isSSR = typeof window === 'undefined'
+  
+    return isSSR ? Responsive.onlyTablet.minWidth : window.innerWidth
+  }
+
   render() {
     const { children } = this.props
     const { fixed } = this.state
 
     return (
-      <Responsive getWidth={getWidth} minWidth={Responsive.onlyTablet.minWidth}>
+      <Responsive getWidth={this.getWidth} minWidth={Responsive.onlyTablet.minWidth}>
         <Visibility
           once={false}
           onBottomPassed={this.showFixedMenu}

@@ -3,6 +3,7 @@ import ResponsiveContainer from './ResponsiveContainer';
 import { 
     Segment,
     Grid,
+    Image,
     Header,
     Button
 } from 'semantic-ui-react';
