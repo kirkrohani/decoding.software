@@ -74,7 +74,6 @@ class DesktopHeader extends React.Component {
               <HomepageHeading /> 
           </Segment>
         </Visibility>
-
         {children}
       </Responsive>
     )
