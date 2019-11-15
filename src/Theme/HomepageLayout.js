@@ -17,17 +17,15 @@ class  HomepageLayout extends React.Component {
   render() {
     return (
       <ResponsiveContainer>
+
         <Segment style={{ padding: '8em 0em' }} vertical>    
             <Grid container stackable verticalAlign='middle'>     
               <Grid.Row>        
                 <Grid.Column width={8}>                                    
-                  <Header as='h3' style={{ fontSize: '2em' }}>
-                   This is a dummy title for a blog post.
-                  </Header>
-                  <p style={{ fontSize: '1.33em' }}>
-                    This is a snippet from a blog post...This is a snippet from a blog post...
-                    This is a snippet from a blog post...This is a snippet from a blog post...
-                  </p>
+                  <BlogSegment title='We help companies and companions'
+                                           snippet='We can give your company superpowers to do things that they never thought possible. 
+                                                          Let us delight your customers and empower your needs... through pure data analytics.'
+                  />
                 </Grid.Column>
       
                 <Grid.Column floated='right' width={6}>             
