@@ -9,7 +9,7 @@ import {
 } from 'semantic-ui-react'
 
 const BlogSegment = (props) =>  {
-  const {title, description, imageUrl} = props;
+  const {title, snippet, imageUrl} = props;
   return (
     <Segment style={{ padding: '8em 0em' }} vertical>
             
@@ -21,7 +21,7 @@ const BlogSegment = (props) =>  {
               {title}
             </Header>
             <p style={{ fontSize: '1.33em' }}>
-              {description}
+              {snippet}
             </p>
           </Grid.Column>
 

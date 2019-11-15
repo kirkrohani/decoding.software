@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import DesktopContainer from './DesktopContainer';
+import DesktopHeader from './DesktopHeader';
 
 const ResponsiveContainer = ({ children }) => (
   <div>
-    <DesktopContainer>{children}</DesktopContainer>
-    {/* @TODO Uncomment after implementing <MobileContainer>{children}</MobileContainer> */}
+    <DesktopHeader>{children}</DesktopHeader>
+    {/* @TODO Uncomment after implementing <MobileHeader>{children}</MobileHeader> */}
   </div>
 )
 
