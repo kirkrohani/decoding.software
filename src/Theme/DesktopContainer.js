@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import HomepageHeading from './HomepageHeading';
 import {
  Responsive,
  Visibility,
@@ -70,7 +71,7 @@ class DesktopContainer extends React.Component {
                 </Menu.Item>
               </Container>
             </Menu>
-            {/* @TODO Uncomment later <HomepageHeading /> */}
+              <HomepageHeading /> 
           </Segment>
         </Visibility>
 
