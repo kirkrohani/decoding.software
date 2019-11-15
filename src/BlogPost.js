@@ -1,46 +1,34 @@
 import React from 'react';
-import './css/App.css';
-import EditBlogButton from './EditBlogButton';
+import PropTypes from 'prop-types';
+import {
+Header,
+Segment,
+Container,
+Button
+} from 'semantic-ui-react'
 
+const BlogPost = (props) =>  {
+  const {title, snippet} = props;
+  return (
+    <Segment style={{ padding: '8em 0em' }} vertical>
+      <Container text>
+        <Header as='h3' style={{ fontSize: '2em' }}>
+         {title}
+        </Header>
+        <p style={{ fontSize: '1.33em' }}>
+          {snippet}
+        </p>
+        <Button as='a' size='large'>
+          Read More
+        </Button>
+      </Container>
+    </Segment>
+  )
+}
 
-class BlogPost extends React.Component {
-  handleUpVote = () =>  {
-    this.props.onVoteClick(this.props.post.id);
-  }
-
-  render () {
-    const {imageUrl, url, title, description, submitterAvatarUrl, votes, id} = this.props.post;
-    return (
-      <div className="item">
-        <div className="image">
-          <img alt="Main blog post" src={imageUrl} />
-        </div>
-      
-        <div className="middle aligned content">
-          <div className="header">
-            <a href={url}>{title}</a>
-          </div>
-          <div className="description">
-            <p>{description}</p>
-          </div>
-          <div className="extra">
-            <span>Submitted by: </span>
-            <img alt= "posters avatar" src={submitterAvatarUrl} className="ui avatar image" />
-            <a onClick={this.handleUpVote}>
-              <i className="large caret up icon" />
-            </a>
-            {votes}
-          </div>
-          <div>
-           <EditBlogButton key={`editButton-$id`} post={id} />
-          </div>
-          <hr />
-          <br />
-        </div>
-      </div>
-    );
-
-  }
+BlogPost.propTypes = {
+  title: PropTypes.string,
+  snippet: PropTypes.string
 }
 
 export default BlogPost;

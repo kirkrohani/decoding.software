@@ -43,7 +43,7 @@ class BlogHomepage extends React.Component {
    
    return (
     <div>
-      <HomepageLayout />
+      <HomepageLayout blogPosts={this.state.blogPosts} />
       {/* @TODO: Move to proper file{ this.props.isAdmin && <CreateBlog onFormSubmit={this.handleCreateFormSubmit} /> }
       <BlogList blogPosts={this.state.blogPosts} onVoteClick={this.handleUpVote} /> */}
     </div>
