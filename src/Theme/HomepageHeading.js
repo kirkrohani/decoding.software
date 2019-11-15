@@ -3,8 +3,6 @@ import PropTypes from 'prop-types';
 import {
  Container,
  Header,
- Button,
- Icon
 } from 'semantic-ui-react'
 
 /* eslint-disable react/no-multi-comp */

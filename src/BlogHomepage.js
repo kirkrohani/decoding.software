@@ -1,8 +1,6 @@
 import React from 'react';
 import './css/App.css';
 import { posts } from './data/seed.js';
-import BlogList from './BlogList';
-import CreateBlog from './CreateBlog';
 import HomepageLayout from './Theme/HomepageLayout';
 
 class BlogHomepage extends React.Component {
