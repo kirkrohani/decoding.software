@@ -24,7 +24,7 @@ const HomepageHeading = ({ mobile }) => (
     />
     <Header
       as='h2'
-      content="Random musings about tech and other stuff that's on my mind"
+      content="Random musings about < tech /> "
       inverted
       style={{
         fontStyle: 'italic',
